@@ -1,0 +1,196 @@
+.container {
+    width: 100%;
+    min-width: 500px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    z-index: 10000;
+    border-radius: 8px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.15) 0px 10px 40px);
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.word {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.phonetic {
+    display: flex;
+    padding: 4px 8px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 8px;
+    background:  #f7f8fa;
+    color: #1d2129;
+    font-size: 12px;
+}
+
+.explain {
+    display: block;
+}
+
+.explain-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.explain-item-pos {
+    width: 37px;
+    color: rgb(134, 144, 156);
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 20px;
+    flex-shrink: 0;
+}
+
+.explain-item-word {
+    color: rgb(48, 83, 255);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    flex-shrink: 0;
+}
+
+.explain-item-text {
+    color: rgb(29, 33, 41);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    overflow-wrap: break-word;
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    width: auto;
+    height: 18px;
+    padding: 0px 4px;
+    border-radius: 6px;
+    border: 0.5px solid rgb(236, 239, 255);
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+    color: rgb(134, 144, 156);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.transform-item {
+    display: inline-flex;
+    gap: 6px;
+    margin-right: 20px;
+}
+
+.transform-item-name {
+    color: rgb(134, 144, 156);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.transform-item-value {
+    color: rgb(78, 89, 105);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.section {
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(29, 33, 41);
+}
+
+.triangle {
+    display: inline-block;
+    margin-right: 8px;
+    transform: rotate(90deg);
+    font-size: 10px;
+}
+
+.example {
+    margin-bottom: 12px;
+}
+
+.english {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.chinese {
+    color: rgb(78, 89, 105);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.playButton {
+    color: #4285f4;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.synonym-item {
+    display: flex;
+    gap: 6px;
+}
+.synonym-item-pos {
+    flex: 0 0 28px;
+    color: rgb(134, 144, 156);
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.synonym-item-trans {
+    color: rgb(29, 33, 41);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    overflow-wrap: break-word;
+}
+
+.synonym-item-words {
+    display: flex;
+    gap: 6px;
+}
+.synonym-item-word {
+    color: rgb(48, 83, 255);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+#plasmo-shadow-container {
+    position: absolute !important;
+}
+
+#plasmo-overlay-0 {
+    max-height: 500px;
+    overflow: hidden;
+}
