@@ -88,7 +88,7 @@ const Translation: React.FC<TranslationProps> = () => {
       {/* 输入区域 */}
       <div className="translation-input">
         <textarea
-          placeholder="输入需要翻译的文本..."
+          placeholder="Enter the text to be translated..."
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           style={{

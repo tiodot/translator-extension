@@ -1,7 +1,6 @@
-import transIcon from "data-base64:~assets/trans.jpg"
+import transIcon from "data-base64:~assets/icon-64.png"
 import cssText from "data-text:~/contents/icon.css"
 import React, { useEffect, useMemo, useRef, useState } from "react"
-import event from "~contents/event"
 
 export const getStyle = () => {
   const style = document.createElement("style")

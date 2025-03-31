@@ -1,7 +1,7 @@
 
 let previousSelection: string | null = null;
 // 监听选中文本事件
-document.addEventListener('mouseup', (e) => {
+document.body.addEventListener('mouseup', (e) => {
   const selection = window.getSelection();
 
   if (selection.rangeCount === 0) {
@@ -54,17 +54,6 @@ document.addEventListener('mouseup', (e) => {
       word: selectedText
     }
   }))
-
-  // 如果有选中文本，显示弹窗
-  //   showPopup(e.pageX, e.pageY, selectedText);
-  // chrome.runtime.sendMessage({
-  //   type: 'SHOW_POPUP',
-  //   data: {
-  //       x: e.pageX,
-  //       y: e.pageY,
-  //       word: selectedText
-  //   }
-  // })
 });
 
 export default {}

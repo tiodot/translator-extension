@@ -15,11 +15,17 @@
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(104, 104, 104, 0.14) 0px 0px 8px 0px;
     touch-action: none;
+    opacity: 0.75;
     display: none;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .icon-container.show {
     display: flex;
+}
+
+.icon-container:hover {
+    opacity: 1;
 }
 
 .icon-container img {

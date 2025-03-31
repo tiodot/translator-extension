@@ -29,6 +29,12 @@ const Dictionary: React.FC<{word: string, response: any}> = (props) => {
     }
   }, [props])
 
+  const playAudio = (type: 'uk' | 'us') => {
+    const audio = new Audio();
+    audio.src = basic[type === 'uk' ? 'ukSpeech' : 'usSpeech'];
+    audio.play();
+  };
+
   return (
     <div className='dictionary-container'>
       <div className='header'>
@@ -36,11 +42,11 @@ const Dictionary: React.FC<{word: string, response: any}> = (props) => {
           <span className='word'>{word}</span>
           <span className='phonetic' style={displayEnglishStyle}>
             英 {basic.ukPhonetic || ''}
-            <span className='playButton' onClick={() => { }}>▶</span>
+            <span className='playButton' onClick={() => playAudio('uk')}>▶</span>
           </span>
           <span className='phonetic' style={displayEnglishStyle}>
             美 {basic.usPhonetic || ''}
-            <span className='playButton' onClick={() => { }}>▶</span>
+            <span className='playButton' onClick={() => playAudio('us')}>▶</span>
           </span>
         </div>
       </div>
