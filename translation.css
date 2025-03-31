@@ -1,0 +1,76 @@
+.translation-text {
+    font-size: 16px;
+    min-height: 26px;
+    line-height: 26px;
+    padding-left: 12px;
+    margin: 0 0 0 -12px;
+    font-weight: 400;
+    color: rgb(31 35 41);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+.translation-text img {
+    position: absolute;
+    cursor: pointer;
+    right: 6px;
+    bottom: 6px;
+}
+
+.translation-container {
+    padding: 20px;
+}
+
+.translation-container textarea {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .03);
+    background-color: #fff;
+    color: #303030;
+    font-family: inherit;
+    padding: 10px 90px 10px 14px;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    min-height: 68px;
+    border: 1px solid #dedede;
+}
+
+.translation-container textarea:focus {
+    border: 1px solid #4285f4;
+}
+
+.translation-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.translation-action {
+    position: absolute;
+    bottom: 30px;
+    right: 16px;
+    background: #4285f4;
+    border: none;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.translation-action:disabled{
+    cursor: not-allowed;
+    opacity: .8;
+}
+
+.translation-action:hover {
+    background: #4992f5;
+}
+
+.translation-action img {
+    width: 16px;
+    height: 16px;
+}

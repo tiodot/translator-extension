@@ -1,6 +1,6 @@
 {
-  "name": "zen-translator",
-  "displayName": "Zen translator",
+  "name": "quick-translator",
+  "displayName": "QuickTrans",
   "version": "0.0.1",
   "description": "a chrome extension translator, simple but useful",
   "author": "tiodot",

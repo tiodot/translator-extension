@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    min-width: 500px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.word {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+
+#plasmo-shadow-container {
+    position: absolute !important;
+    z-index: 10000;
+}
+
+#plasmo-overlay-0 {
+    max-height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.15) 0px 10px 40px);
+}

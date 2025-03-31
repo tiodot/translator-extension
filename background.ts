@@ -66,7 +66,7 @@ async function getDictionaryData(word: string): Promise<string> {
 async function translate(word: string) {
     const language = await detactLanguage(word)
     const targetLanguage = language === 'en' ? 'zh' : 'en'
-    fetch("https://translate.volcengine.com/crx/translate/v1/", {
+    return fetch("https://translate.volcengine.com/crx/translate/v1/", {
         "headers": {
           "content-type": "application/json",
         },
@@ -81,13 +81,26 @@ async function translate(word: string) {
         })
     }).then(res => res.json()).then(data => data.translation);
 }
+
+function sendMessage(sender, data) {
+    if (!sender.tab) {
+        chrome.runtime.sendMessage(data)
+    } else {
+        chrome.tabs.sendMessage(sender.tab.id, data)
+    }
+}
+
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     console.log(message, 'message')
-    if (message.type === 'SHOW_POPUP') {
+    if (message.type === 'FETCH_DATA') {
+        if (!message.data.word) {
+            sendMessage(sender, {type: 'FETCH_DATA_DONE'})
+            return
+        }
         const data = await getDictionaryData(message.data.word)
         console.log(data, 'data')
         if (data) {
-            chrome.tabs.sendMessage(sender.tab.id, {
+            sendMessage(sender, {
                 type: 'SHOW_WORD_POPUP',
                 data: {
                     ...message.data,
@@ -96,7 +109,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
             })
         } else {
             const translation = await translate(message.data.word)
-            chrome.tabs.sendMessage(sender.tab.id, {
+            sendMessage(sender, {
                 type: 'SHOW_TRANSLATION_POPUP',
                 data: {
                     ...message.data,
@@ -104,10 +117,6 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
                 }
             })
         }
-    }
-    if (message.type === 'CLOSE_POPUP') {
-        chrome.tabs.sendMessage(sender.tab.id, {
-            type: 'CLOSE_POPUP'
-        })
+        sendMessage(sender, {type: 'FETCH_DATA_DONE'})
     }
 })
