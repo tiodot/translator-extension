@@ -31,7 +31,7 @@ chrome.action.onClicked.addListener((tab) => {
     })
 });
 
-function detactLanguage(word: string) {
+function detectLanguage(word: string) {
     return fetch("https://translate.volcengine.com/web/langdetect/v1/", {
         "headers": {
             "content-type": "application/json",
@@ -44,7 +44,7 @@ function detactLanguage(word: string) {
 // get the dictionary data
 async function getDictionaryData(word: string): Promise<string> {
     // TODO: get the dictionary data
-    const language = await detactLanguage(word)
+    const language = await detectLanguage(word)
     console.log(language, 'language')
     const targetLanguage = language === 'en' ? 'zh' : 'en'
     return fetch("https://translate.volcengine.com/crx/dict/detail/v1/", {
@@ -64,7 +64,7 @@ async function getDictionaryData(word: string): Promise<string> {
 }
 
 async function translate(word: string) {
-    const language = await detactLanguage(word)
+    const language = await detectLanguage(word)
     const targetLanguage = language === 'en' ? 'zh' : 'en'
     return fetch("https://translate.volcengine.com/crx/translate/v1/", {
         "headers": {

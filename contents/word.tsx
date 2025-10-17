@@ -20,7 +20,7 @@ const Word: React.FC = () => {
       // console.log(message, 'message listener')
       if (message.type === 'SHOW_WORD_POPUP') {
         setVisible(true)
-        console.log(message.data, 'message.data')
+        // console.log(message.data, 'message.data')
         if (containerRef.current) {
           containerRef.current.parentElement.style.left = `${message.data.x}px`
           containerRef.current.parentElement.style.top = `${message.data.y}px`

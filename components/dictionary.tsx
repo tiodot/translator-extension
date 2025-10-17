@@ -10,13 +10,13 @@ const Dictionary: React.FC<{word: string, response: any}> = (props) => {
   const displayEnglishStyle = useMemo(() => (isEnglish ? {} : {display: 'none'}), [isEnglish])
 
   useEffect(() => {
-    console.log('props:', props)
+    // console.log('props:', props)
     setWord(props.word)
     if (!props.response?.result) {
       return;
     }
     const result = props.response.result[0]
-    console.log(result, 'result')
+    // console.log(result, 'result')
     if (result.ec) {
       setIsEnglish(true)
       setBasic(result.ec.basic)
